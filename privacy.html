@@ -10,7 +10,7 @@
   <div class="container">
     <h1>Datenschutzerklärung</h1>
     <p class="meta">
-      Stand: Mai 2026 — Für die Mobile-App „Gaslight" (iOS).
+      Stand: Juni 2026 — Für die Mobile-App „Gaslight" (iOS).
     </p>
 
     <div class="nav">
@@ -47,17 +47,16 @@
 
     <h2>2. Welche Daten wir verarbeiten</h2>
 
-    <h3>2.1 Account-Daten (bei Registrierung)</h3>
-    <ul>
-      <li><strong>E-Mail-Adresse</strong> (Pflichtfeld für Login)</li>
-      <li><strong>Passwort</strong> (gehasht gespeichert, niemals im Klartext)</li>
-      <li><strong>Anzeigename / Display Name</strong> (frei wählbar)</li>
-      <li>Zeitstempel der Registrierung</li>
-    </ul>
+    <p>
+      Die App ist <strong>ohne Registrierung</strong> nutzbar. Es wird
+      kein Konto angelegt, du musst weder Email-Adresse noch Passwort
+      angeben. Entsprechend verarbeiten wir keine klassischen
+      Account-Daten.
+    </p>
 
-    <h3>2.2 Abonnement-Daten (bei Premium-Kauf)</h3>
+    <h3>2.1 Abonnement-Daten (bei Premium-Kauf)</h3>
     <ul>
-      <li>Eindeutige App-User-ID (verknüpft mit deinem Account)</li>
+      <li>Anonyme App-User-ID (zufällig generiert, nicht mit einem Account verknüpft)</li>
       <li>Status deines Abonnements (aktiv / abgelaufen / gekündigt)</li>
       <li>Welches Produkt gekauft wurde (Weekly / Yearly)</li>
       <li>Ablaufdatum und automatische Verlängerung</li>
@@ -68,19 +67,21 @@
       läuft direkt über deinen Apple-Account.
     </p>
 
-    <h3>2.3 App-Nutzungsdaten (lokal auf deinem Gerät)</h3>
+    <h3>2.2 Lokal gespeicherte Daten (AsyncStorage, nur auf deinem Gerät)</h3>
     <ul>
       <li>Spracheinstellung (DE / EN)</li>
       <li>Deine Favoriten (welche Spiele du markiert hast)</li>
       <li>Anonyme Customer-ID für das Subscription-System</li>
+      <li><code>gaslight.profile.name</code> — der von dir in den Einstellungen selbst eingegebene Name (optional, unverschlüsselt, verlässt dein Gerät nicht)</li>
     </ul>
     <p>
       Diese Daten werden ausschließlich lokal auf deinem Gerät im
       sogenannten <em>AsyncStorage</em> gespeichert und verlassen dein
-      Gerät nicht, außer du löscht die App.
+      Gerät nicht. Sie werden beim Deinstallieren der App vollständig
+      entfernt.
     </p>
 
-    <h3>2.4 Sensor-Daten (Gerätelage)</h3>
+    <h3>2.3 Sensor-Daten (Gerätelage)</h3>
     <p>
       Die App nutzt die Bewegungssensoren deines Geräts
       (<em>DeviceMotion</em>), um den optischen „Liquid Glass"-Effekt
@@ -90,7 +91,7 @@
       übermittelt.
     </p>
 
-    <h3>2.5 Analyse-Daten (optional, zukünftig)</h3>
+    <h3>2.4 Analyse-Daten (optional, zukünftig)</h3>
     <p>
       Wir behalten uns vor, in zukünftigen App-Versionen ein
       anonymisiertes Analyse-Tool (z.B. PostHog, Sentry) einzusetzen,
@@ -107,16 +108,16 @@
         <th style="padding:8px; border-bottom:1px solid #ddd;">Rechtsgrundlage</th>
       </tr>
       <tr>
-        <td style="padding:8px; border-bottom:1px solid #f0f0f0;">Account-Erstellung &amp; Login</td>
+        <td style="padding:8px; border-bottom:1px solid #f0f0f0;">Abonnement-Verwaltung (Gaslight Pro)</td>
         <td style="padding:8px; border-bottom:1px solid #f0f0f0;">Art. 6 Abs. 1 lit. b DSGVO (Vertrag)</td>
       </tr>
       <tr>
-        <td style="padding:8px; border-bottom:1px solid #f0f0f0;">Abonnement-Verwaltung</td>
-        <td style="padding:8px; border-bottom:1px solid #f0f0f0;">Art. 6 Abs. 1 lit. b DSGVO (Vertrag)</td>
+        <td style="padding:8px; border-bottom:1px solid #f0f0f0;">Funktionalität der App (Favoriten, Sprache, lokales Profil)</td>
+        <td style="padding:8px; border-bottom:1px solid #f0f0f0;">Art. 6 Abs. 1 lit. b DSGVO (Vertrag/Funktionalität)</td>
       </tr>
       <tr>
-        <td style="padding:8px; border-bottom:1px solid #f0f0f0;">Funktionalität der App (Favoriten, Sprache)</td>
-        <td style="padding:8px; border-bottom:1px solid #f0f0f0;">Art. 6 Abs. 1 lit. b DSGVO</td>
+        <td style="padding:8px; border-bottom:1px solid #f0f0f0;">DeviceMotion-Effekt („Liquid Glass")</td>
+        <td style="padding:8px; border-bottom:1px solid #f0f0f0;">Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an funktionierender UI; Daten verlassen das Gerät nicht)</td>
       </tr>
       <tr>
         <td style="padding:8px; border-bottom:1px solid #f0f0f0;">Erfüllung gesetzlicher Pflichten (z.B. Steuer, Buchhaltung)</td>
@@ -134,31 +135,37 @@
       Auftragsverarbeitungsvertrag (Art. 28 DSGVO):
     </p>
 
-    <h3>4.1 Supabase</h3>
+    <h3>4.1 RevenueCat</h3>
     <p>
-      Anbieter unserer Authentifizierungs- und Datenbank-Infrastruktur.
-      <br>Anbieter: Supabase, Inc., 970 Toa Payoh North #07-04, Singapore 318992
-      <br>Datenkategorien: E-Mail, Display Name, Passwort-Hash, User-ID
-      <br>Speicherort: EU (Frankfurt) oder USA, je nach Region
-      <br>Datenschutz-Info: <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>
-    </p>
-
-    <h3>4.2 RevenueCat</h3>
-    <p>
-      Anbieter unserer Subscription-Verwaltung. Validiert deine
-      App-Store-Käufe und speichert deinen Subscription-Status.
+      Anbieter unserer Subscription-Verwaltung — Bridge zu Apples
+      StoreKit. Validiert deine App-Store-Käufe und speichert deinen
+      Subscription-Status.
       <br>Anbieter: RevenueCat, Inc., 169 Madison Ave, STE 11883, New York, NY 10016, USA
       <br>Datenkategorien: anonyme App-User-ID, Subscription-Status, Produkt-IDs
+      <br>Übermittlungsgrundlage: EU-US Data Privacy Framework (DPF)
       <br>Datenschutz-Info: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a>
     </p>
 
-    <h3>4.3 Apple</h3>
+    <h3>4.2 Apple (StoreKit / App Store)</h3>
     <p>
       Die App wird über den Apple App Store vertrieben. Apple verarbeitet
       die Zahlungsdaten beim Kauf eines Abonnements sowie technische
-      Geräte-Identifier zur Sicherstellung der App-Bereitstellung.
-      <br>Anbieter: Apple Distribution International Ltd., Hollyhill Industrial Estate, Hollyhill, Cork, Irland
+      Geräte-Identifier zur Sicherstellung der App-Bereitstellung über
+      StoreKit.
+      <br>Anbieter: Apple Distribution International Ltd., Hollyhill Industrial Estate, Hollyhill, Cork, Irland (Konzernverbindung in die USA)
+      <br>Übermittlungsgrundlage: EU-US Data Privacy Framework (DPF)
       <br>Datenschutz-Info: <a href="https://www.apple.com/legal/privacy" target="_blank" rel="noopener">apple.com/legal/privacy</a>
+    </p>
+
+    <h3>4.3 GitHub Pages (Hosting dieser Rechtsdokumente)</h3>
+    <p>
+      Diese Datenschutzerklärung, die AGB und das Impressum werden über
+      GitHub Pages bereitgestellt. Beim Aufruf der Seite werden technisch
+      notwendige Verbindungsdaten (insb. IP-Adresse, User-Agent) durch
+      GitHub verarbeitet.
+      <br>Anbieter: GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA
+      <br>Übermittlungsgrundlage: EU-US Data Privacy Framework (DPF)
+      <br>Datenschutz-Info: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">docs.github.com — GitHub Privacy Statement</a>
     </p>
 
     <h2>5. Datenübermittlung in Drittländer</h2>
@@ -172,9 +179,8 @@
 
     <h2>6. Speicherdauer</h2>
     <ul>
-      <li><strong>Account-Daten:</strong> bis zur Löschung deines Accounts</li>
-      <li><strong>Subscription-Daten:</strong> bis zur Löschung deines Accounts, danach maximal 7 Jahre für steuerrechtliche Aufbewahrungspflichten (§ 132 BAO)</li>
-      <li><strong>Lokale App-Daten:</strong> bis du die App deinstallierst</li>
+      <li><strong>Subscription-Daten (bei RevenueCat/Apple):</strong> für die Laufzeit deines Abonnements, danach maximal 7 Jahre für steuerrechtliche Aufbewahrungspflichten (§ 132 BAO)</li>
+      <li><strong>Lokale App-Daten (AsyncStorage):</strong> bis du die App deinstallierst</li>
       <li><strong>E-Mail-Korrespondenz:</strong> 3 Jahre nach letztem Kontakt</li>
     </ul>
 
@@ -192,8 +198,12 @@
     <p>
       Zur Ausübung dieser Rechte kontaktiere uns unter
       <a href="mailto:appgaslight@gmail.com">appgaslight@gmail.com</a>.
-      Die Account-Löschung kannst du außerdem jederzeit selbst direkt
-      in der App unter „Einstellungen" durchführen.
+      Da die App kein Konto anlegt, kannst du sämtliche lokal
+      gespeicherten App-Daten jederzeit selbst zurücksetzen, indem du
+      die App von deinem Gerät <strong>deinstallierst</strong>. Damit
+      werden auch Sprach-Einstellung, Favoriten, das lokale Profil
+      (<code>gaslight.profile.name</code>) und die anonyme Customer-ID
+      vollständig entfernt.
     </p>
 
     <h2>8. Beschwerderecht</h2>
@@ -219,10 +229,11 @@
 
     <h2>10. Sicherheit</h2>
     <p>
-      Alle Datenübertragungen erfolgen verschlüsselt (TLS/HTTPS).
-      Passwörter werden ausschließlich gehasht gespeichert. Wir treffen
-      angemessene technische und organisatorische Maßnahmen zum Schutz
-      deiner Daten gemäß Art. 32 DSGVO.
+      Alle Datenübertragungen erfolgen verschlüsselt (TLS/HTTPS). Da die
+      App ohne Konto auskommt, werden weder Passwörter noch sonstige
+      Login-Geheimnisse erhoben. Wir treffen angemessene technische und
+      organisatorische Maßnahmen zum Schutz deiner Daten gemäß Art. 32
+      DSGVO.
     </p>
 
     <h2>11. Änderungen dieser Datenschutzerklärung</h2>
@@ -235,7 +246,7 @@
     </p>
 
     <footer>
-      Stand: Mai 2026 · © Alin Schönleitner-Laus
+      Stand: Juni 2026 · © Alin Schönleitner-Laus
     </footer>
   </div>
 </body>
